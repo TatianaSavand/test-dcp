@@ -11,6 +11,7 @@ interface Tab {
 }
 
 export const Sidebar = () => {
+
   const tabs: Tab[] = [
     {
       icon: <Home size={20} className="mx-auto" />,
@@ -20,7 +21,8 @@ export const Sidebar = () => {
   ];
 
   return (
-    <div className='h-full bg-gradient-to-t from-blue-950 to-fuchsia-900 text-white'>
+    <div className='h-screen bg-gradient-to-t from-blue-950 to-fuchsia-900 text-white'
+    >
       {/* Логотип компании */}
       <NavLink
         key={'/'}

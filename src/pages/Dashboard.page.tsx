@@ -2,10 +2,10 @@ import {MainInformationOfObject} from "../components/MainInformationOfObject.tsx
 import {Tabs} from "../components/Tabs.tsx";
 import {Outlet} from "react-router";
 
-export const MainPage = () => {
+export const DashBoard = () => {
   return (
     <div>
-      <div className='p-4'>
+      <div className='m-8'>
         <MainInformationOfObject/>
       </div>
       <div>

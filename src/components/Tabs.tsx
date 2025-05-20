@@ -9,7 +9,7 @@ export const Tabs = () => {
 
   // Массив объектов вкладок
   const tabs: Tab[] = [
-    {url: 'main-information', label: 'Основные сведения'},
+    {url: '', label: 'Основные сведения'},
     {url: 'gallery', label: 'Галерея'},
     {url: 'documents', label: 'Документы'},
     {url: 'organizations', label: 'Организации'},

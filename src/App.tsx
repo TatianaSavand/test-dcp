@@ -4,7 +4,7 @@ import {Outlet} from "react-router";
 function App() {
 
   return (
-    <div className="flex h-screen w-screen flex-row">
+    <div className="flex w-screen">
       <div className="flex-none w-24">
       <Sidebar/>
       </div>

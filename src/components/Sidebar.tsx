@@ -15,7 +15,7 @@ export const Sidebar = () => {
   const tabs: Tab[] = [
     {
       icon: <Home size={20} className="mx-auto" />,
-      url: 'main',
+      url: 'project-card',
       label: "Проекты строительства"
     },
   ];

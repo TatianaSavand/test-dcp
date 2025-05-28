@@ -1,35 +1,50 @@
-import { NavLink } from "react-router";
-import {useState} from "react";
-import {Menu, X} from "lucide-react";
+import { NavLink } from 'react-router';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
+/**
+ * Типизация навигационных вкладок
+ *
+ * @property {string} url - относительный путь маршрута
+ * @property {string} label - текст метки, отображаемой пользователю
+ */
 interface Tab {
   url: string;
   label: string;
 }
 
+/**
+ * Компонент Tabs реализует навигационную панель с вкладками.
+ *
+ * Поддерживает адаптивное отображение:
+ * - На десктопе: горизонтальное меню
+ * - На мобильных устройствах: сворачиваемое вертикальное меню
+ */
 export const Tabs = () => {
+  // Состояние для управления видимостью мобильного меню
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Массив объектов вкладок
+  // Список навигационных вкладок
   const tabs: Tab[] = [
-    {url: '', label: 'Основные сведения'},
-    {url: 'gallery', label: 'Галерея'},
-    {url: 'documents', label: 'Документы'},
-    {url: 'organizations', label: 'Организации'},
-    {url: 'stages-of-implementation', label: 'Этапы реализации'},
+    { url: '', label: 'Основные сведения' },
+    { url: 'gallery', label: 'Галерея' },
+    { url: 'documents', label: 'Документы' },
+    { url: 'organizations', label: 'Организации' },
   ];
 
   return (
     <nav className="sticky top-0 shadow-md bg-white">
       <div className="container mx-auto px-4">
-        {/* Десктопное меню */}
+        {/* Десктопное меню (отображается при ширине экрана ≥ md) */}
         <div className="hidden md:flex justify-between items-center py-3 text-gray-500">
           {tabs.map((tab) => (
             <NavLink
               key={tab.url}
               to={tab.url}
-              className={({isActive}) =>
-                isActive ? "text-blue-500 font-medium flex-1 text-center" : "hover:text-blue-500 transition flex-1 text-center"
+              className={({ isActive }) =>
+                isActive
+                  ? 'text-blue-500 font-medium flex-1 text-center'
+                  : 'hover:text-blue-500 transition flex-1 text-center'
               }
               end
             >
@@ -45,11 +60,11 @@ export const Tabs = () => {
           </span>
 
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X size={24}/> : <Menu size={24}/>}
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Мобильное меню */}
+        {/* Мобильное меню (отображается только если isMenuOpen = true) */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 pt-4 border-t border-gray-200">
             <div className="flex flex-col space-y-3 text-gray-700">
@@ -57,10 +72,10 @@ export const Tabs = () => {
                 <NavLink
                   key={tab.url}
                   to={tab.url}
-                  className={({isActive}) =>
+                  className={({ isActive }) =>
                     isActive
-                      ? "text-blue-500 font-medium"
-                      : "hover:text-blue-500 transition"
+                      ? 'text-blue-500 font-medium'
+                      : 'hover:text-blue-500 transition'
                   }
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -72,5 +87,5 @@ export const Tabs = () => {
         )}
       </div>
     </nav>
-  )
-}
+  );
+};

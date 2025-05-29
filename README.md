@@ -35,41 +35,6 @@
 
 ---
 
-## 📁 Структура проекта
-
-```
-src/
-├── assets/                # Изображения и медиа
-├── components/             # Переиспользуемые компоненты
-│   ├── BuildingMap.tsx     # Компонент карты Яндекс
-│   └── Sidebar.tsx         # Боковое меню
-├── modals/                 # Модальные окна
-│   └── OrganizationModal.tsx
-├── pages/                  # Страницы приложения
-│   ├── Landing.page.tsx
-│   ├── ProjectCard.page.tsx
-│   ├── Organizations.page.tsx
-│   ├── Gallery.page.tsx
-│   └── Documents.page.tsx
-├── types/                  # Интерфейсы и модели
-│   └── ProjectData.ts      # `ConstructionProject`, `BuildingData`, `Organization`
-├── mocks/                  # Моковые данные
-│   └── organizationMock.ts
-├── constants/              # Константы
-│   └── buildingData.ts
-├── hooks/                  # Кастомные хуки
-│   └── useOrganizationData.ts
-├── fields/                 # Форм-поля
-│   ├── InputField.tsx
-│   ├── SelectField.tsx
-│   ├── TextAreaField.tsx
-│   └── DisplayField.tsx
-└── App.tsx
-└── main.tsx
-```
-
----
-
 ## 🛠️ Технологии
 
 - **React 19** + StrictMode
@@ -87,7 +52,6 @@ src/
 
 ```bash
 git clone <ваш-репозиторий>
-cd digital-construction-passport
 ```
 
 ### 2. Установка зависимостей:

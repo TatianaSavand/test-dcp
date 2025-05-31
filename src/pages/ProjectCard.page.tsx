@@ -1,23 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import type { BuildingData, ConstructionProject } from '../types/ProjectData.types.ts';
+import type { ConstructionProject } from '../types/ProjectData.types.ts';
 import { emptyProject, mockProject } from '../types/ProjectData.types.ts';
-
-import { BuildingMap } from '../components/BuildingMap';
 import {DisplayField} from "../components/fields/DisplayField.tsx";
 import {InputField} from "../components/fields/InputField.tsx";
 import {TextAreaField} from "../components/fields/TextAreaField.tsx";
 import {SelectField} from "../components/fields/SelectField.tsx";
 
-// Данные для карты
-export const buildingData: BuildingData = {
-  id: 'HR3498-10-0001-99',
-  address: 'ул. Гжатская, вл. 9',
-  coordinates: [59.999795, 30.380960],
-  projectNumber: 'HR3498-10-0001-99',
-  constructionType: 'Жилой комплекс',
-  startDatePlanned: '2023-01-15',
-  endDatePlanned: '2025-12-31',
-};
 
 /**
  * Компонент ProjectCardPage — страница карточки проекта.
@@ -234,7 +222,7 @@ const ProjectCardPage = () => {
         {/* Правая колонка */}
         <div className="lg:w-1/3 w-full flex flex-col gap-6 overflow-hidden">
           {/* Аватар проекта */}
-          <div className="rounded-lg shadow-md overflow-hidden flex-1 min-h-[200px]">
+          <div className="rounded-lg shadow-md overflow-hidden flex-1 min-h-[200px] max-h-[300px]">
             <div
               className="w-full h-full bg-cover bg-center bg-no-repeat"
               style={{
@@ -243,19 +231,6 @@ const ProjectCardPage = () => {
               }}
               aria-label="Изображение проекта"
             />
-          </div>
-
-          {/* Карта */}
-          <div className="bg-white rounded-lg shadow-md p-4 flex-1 min-h-[300px]">
-            <section className="flex flex-col items-center h-full">
-              <h2 className="text-xl font-semibold mb-4">Карта</h2>
-              <div className="w-full h-full">
-                <BuildingMap
-                  address={buildingData.address}
-                  coordinates={buildingData.coordinates}
-                />
-              </div>
-            </section>
           </div>
         </div>
       </div>

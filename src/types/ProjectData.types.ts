@@ -40,13 +40,3 @@ export const mockProject: ConstructionProject = {
   plannedCompletionDate: '2024-06-30',
 };
 
-// Данные, используемые для отображения на карте
-export interface BuildingData {
-  id: string;                     // Уникальный идентификатор проекта
-  address: string;                // Адрес строительства
-  coordinates: [number, number];  // Географические координаты [долгота, широта]
-  projectNumber: string;          // Номер проекта
-  constructionType: string;       // Тип строительства (например: "Жилой комплекс")
-  startDatePlanned: string;       // Планируемая дата начала
-  endDatePlanned: string;         // Планируемая дата завершения
-}
